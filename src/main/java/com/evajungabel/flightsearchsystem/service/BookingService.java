@@ -36,7 +36,7 @@ public class BookingService {
 
 
     public BookingInfo saveBooking(BookingForm bookingForm) {
-        if (customUserService.findCustomUserByEmail(bookingForm.getEmail()) != null) {
+        if (customUserService.findByEmail(bookingForm.getEmail()) != null) {
             CustomUser user = customUserService.findCustomUserByEmail(bookingForm.getEmail());
             Booking booking = saveBookingWithUser(user, bookingForm);
             return modelMapper.map(booking, BookingInfo.class);

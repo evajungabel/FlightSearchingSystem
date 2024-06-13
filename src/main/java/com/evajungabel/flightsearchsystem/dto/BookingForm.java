@@ -24,7 +24,7 @@ public class BookingForm {
     private String lastName;
 
 
-    @NotBlank(message = "Date of birth cannot be empty!")
+//    @NotBlank(message = "Date of birth cannot be empty!")
     private LocalDate dateOfBirth;
 
 

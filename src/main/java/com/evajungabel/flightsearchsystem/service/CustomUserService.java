@@ -58,6 +58,10 @@ public class CustomUserService  implements UserDetailsService {
         return customUserOptional.get();
     }
 
+    public CustomUser findByEmail(String email) {
+        return customUserRepository.findByEmail(email);
+    }
+
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
