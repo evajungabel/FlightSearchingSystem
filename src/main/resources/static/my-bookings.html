@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/book-flight.css">
+    <link rel="stylesheet" href="./css/searching-booking-table.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="./js/my-bookings.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/footer.js"></script>
+    <title>My Bookings</title>
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+
+<div class="container">
+    <div class="searching-table">
+        <form action="" id="my-bookings">
+            <div class="search-inputs">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" id="email" placeholder=" " required>
+                    <label for="email">E-mail address</label>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+                <button class="search" type="submit">Search flights</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="table-of-bookings" style="display: none;">
+        <h2 style="text-align: center; padding: 2%">Bookings</h2>
+        <table id="booking-table">
+            <thead>
+            <tr>
+                <th>Place From</th>
+                <th>Place To</th>
+                <th>Departure Time</th>
+                <th>Arrival Time</th>
+                <th>Duration</th>
+                <th>Number of Passengers</th>
+                <th>Number of Available Seats</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="footer-placeholder"></div>
+
+</body>
+</html>

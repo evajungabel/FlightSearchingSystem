@@ -1,0 +1,142 @@
+.searching-table {
+    position: relative;
+    width: 30%;
+    height: 70%;
+    background: antiquewhite;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin: 10% 5%;
+    border-bottom: 2px solid #fff;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:not(:placeholder-shown)~label
+{
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    padding: 0 35px 0 5px;
+    cursor: pointer;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    color: black;
+    font-size: 1.2em;
+    line-height: 57px;
+}
+
+
+.error-message {
+    position: relative;
+    /*width: 44px;*/
+    /*height: 950px;*/
+    /*color: #3F3F3F;*/
+    color: red;
+    font-size: 0.875em;
+    display: block;
+    margin-top: 5px;
+}
+
+
+button.search {
+    width: 40%;
+    height: auto;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
+    text-align: center;
+    margin: 10% 5%;
+}
+
+.search:hover {
+    background-color: orange;
+}
+
+
+@media (max-width: 1221px) {
+    video {
+        margin: 0;
+        padding: 0;
+        /*width: 100%;*/
+        height: 100vh;
+    }
+}
+
+#table-of-bookings {
+    position: relative;
+    margin-top: 2%;
+    width: 70%;
+    height: auto;
+    background: slategrey;
+    /*border: 2px solid rgba(255, 255, 255, .5);*/
+    /*border-radius: 20px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+

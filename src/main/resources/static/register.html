@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="css/register-login.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/register-login.js"></script>
+    <title>Login/Registration</title>
+</head>
+
+<body>
+<div id="navbar-placeholder"></div>
+
+<section class="section-register">
+    <div class="register-box">
+        <form id="form-box" action="">
+            <h2>Registration</h2>
+            <div class="input-box">
+                <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                <input type="text" placeholder=" " id="firstName" required>
+                <label for="firstName">First name*</label>
+                <span class="error-message" id="firstNameError"></span>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                <input type="text" placeholder=" " id="lastName" required>
+                <label for="lastName">Last name*</label>
+                <span class="error-message" id="lastNameError"></span>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </span>
+                <input type="text" placeholder=" " id="username" required>
+                <label for="username">Username*</label>
+                <span class="error-message" id="usernameError"></span>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                <input type="text" placeholder=" " id="email" required>
+                <label for="email">E-mail*</label>
+                <span class="error-message" id="emailError"></span>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                <input type="password" placeholder=" " id="password" required>
+                <label for="password">Password*</label>
+                <span class="error-message" id="passwordError"></span>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                        <ion-icon name="call-outline"></ion-icon>
+                    </span>
+                <input type="text" placeholder=" " id="phoneNumber">
+                <label for="phoneNumber">Phone number</label>
+                <span class="error-message" id="phoneNumberError"></span>
+            </div>
+            <div class="asz">
+                <label for="termsCheckbox" class="asz-label">
+                    <input type="checkbox" id="termsCheckbox">
+                    <div class="asz-error">
+                    <div class="label-text">I accept
+                        <a href="assets/pdf-files/A.pdf" target="_blank">Privacy & cookies</a>
+                        and <a href="assets/pdf-files/B.pdf" target="_blank">Terms & conditions</a>
+                    </div>
+                        <div class="error-message" id="termsCheckboxError"></div>
+                    </div>
+                </label>
+            </div>
+            <button class="submit" type="submit">Registration</button>
+            <div class="login-link">
+                <p>Do you have an account? <a class="login-in" href="login.html">Login!</a></p>
+            </div>
+        </form>
+    </div>
+</section>
+<dialog id="errorModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <p id="modalErrorMessage"></p>
+        <button id="modalOkButton">OK</button>
+    </div>
+</dialog>
+
+</body>
+</html>

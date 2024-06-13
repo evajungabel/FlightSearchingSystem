@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="css/register-login.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/save-booking.js"></script>
+    <title>Save Booking</title>
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+
+<section class="section-register">
+    <div class="register-box">
+        <form id="form-save-booking" action="">
+            <h2>Save Booking</h2>
+            <div class="input-box">
+                <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                <input type="text" placeholder=" " id="firstName" required>
+                <label for="firstName">First name*</label>
+                <span class="error-message" id="firstNameError"></span>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                <input type="text" placeholder=" " id="lastName" required>
+                <label for="lastName">Last name*</label>
+                <span class="error-message" id="lastNameError"></span>
+            </div>
+            <div class="input-box">
+                <input type="date" id="dateOfBirth" name="dateOfBirth" placeholder=" " required>
+                <span class="error-message" id="dateOfBirthError"></span>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                <input type="text" placeholder=" " id="email" required>
+                <label for="email">E-mail*</label>
+                <span class="error-message" id="emailError"></span>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                        <ion-icon name="call-outline"></ion-icon>
+                    </span>
+                <input type="text" placeholder=" " id="phoneNumber">
+                <label for="phoneNumber">Phone number</label>
+                <span class="error-message" id="phoneNumberError"></span>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                <input type="text" placeholder=" " id="documentNumber" required>
+                <label for="documentNumber">nationalID or Passport*</label>
+                <span class="error-message" id="documentNumberError"></span>
+            </div>
+            <div class="input-box">
+                <input type="date" id="expirationDate" name="expirationDate" placeholder=" " required>
+                <span class="error-message" id="expirationDateError"></span>
+            </div>
+            <div class="input-box">
+                <!--                <span class="icon">-->
+                <!--                        <ion-icon name="lock-closed"></ion-icon>-->
+                <!--                    </span>-->
+                <input type="text" placeholder=" " id="issuingCountry" required>
+                <label for="issuingCountry">Issuing Country*</label>
+                <span class="error-message" id="issuingCountryError"></span>
+            </div>
+            <div class="input-box">
+                <!--                <span class="icon">-->
+                <!--                        <ion-icon name="lock-closed"></ion-icon>-->
+                <!--                    </span>-->
+                <input type="text" placeholder=" " id="documentType" required>
+                <label for="documentType">Document Type*</label>
+                <span class="error-message" id="documentTypeError"></span>
+            </div>
+            <div class="input-box">
+                <!--                <span class="icon">-->
+                <!--                        <ion-icon name="lock-closed"></ion-icon>-->
+                <!--                    </span>-->
+                <input type="text" placeholder=" " id="nationality" required>
+                <label for="nationality">Nationality*</label>
+                <span class="error-message" id="nationalityError"></span>
+            </div>
+            <div class="asz">
+                <label for="termsCheckbox" class="asz-label">
+                    <input type="checkbox" id="termsCheckbox">
+                    <div class="asz-error">
+                        <div class="label-text">I accept
+                            <a href="assets/pdf-files/A.pdf" target="_blank">Privacy & cookies</a>
+                            and <a href="assets/pdf-files/B.pdf" target="_blank">Terms & conditions</a>
+                        </div>
+                        <div class="error-message" id="termsCheckboxError"></div>
+                    </div>
+                </label>
+            </div>
+            <button id="save-button" class="submit" type="submit">Save Booking</button>
+        </form>
+    </div>
+</section>
+
+</body>
+</html>

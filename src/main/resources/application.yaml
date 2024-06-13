@@ -1,0 +1,15 @@
+spring:
+  application:
+    name:
+      FlightSearchSystem
+  datasource:
+    url: jdbc:mysql://localhost:3300/searching_flights?createDatabaseIfNotExist=true&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: on
