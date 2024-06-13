@@ -4,44 +4,47 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/searching-table.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/mejer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script src="./js/navbar.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/footer.js"></script>
+    <script src="./js/search-flights.js"></script>
     <title>Find Your Flight</title>
 </head>
 <body>
 <div id="navbar-placeholder"></div>
 
 <section class="section">
-
-    <div>
-        <div class="title">
-            <h1>Life is an adventure,
-                </br> book it!</h1>
-        </div>
-        <div class="video-container">
-            <div class="color-overlay"></div>
-            <video autoplay loop muted>
-                <source src="./assets/airplane-flying.mp4" type="video/mp4">
-            </video>
-        </div>
+    <div class="title">
+        <h1 class="firstH1">Life is an adventure,</h1>
+        <h1 class="secondH1">book it!</h1>
+    </div>
+    <div class="video-container">
+        <div class="color-overlay"></div>
+        <video autoplay loop muted>
+            <source src="./assets/airplane-flying.mp4" type="video/mp4">
+        </video>
     </div>
 
+
     <div class="searching-table">
-        <form action="" class="search-form">
+        <form action="" id="search-form">
             <div class="search-inputs fly-types">
                 <div class="input-fly-types">
-                    <input type="checkbox" id="return" name="return" value="Return">
+                    <input type="radio" id="return" name="ways" value="return">
                     <label for="return">Return</label>
                 </div>
                 <div class="input-fly-types">
-                    <input type="checkbox" id="one-way" name="one-way" value="one-way">
+                    <input type="radio" id="one-way" name="ways" value="one-way">
                     <label for="one-way">One-way</label>
                 </div>
                 <div class="input-fly-types">
-                    <input type="checkbox" id="multi-city" name="multi-city" value="multi-city">
+                    <input type="radio" id="multi-city" name="ways" value="multi-city">
                     <label for="multi-city">Multi-city</label>
                 </div>
             </div>
@@ -50,25 +53,21 @@
                     <span class="icon">
                         <ion-icon name="arrow-up-circle-outline"></ion-icon>
                     </span>
-                    <input type="text" id="from" placeholder=" " required>
-                    <label for="from">From</label>
-                    <!--                <span class="error-message" id="emailOrUsernameError"></span>-->
+                    <input type="text" id="placeFrom" placeholder=" " required>
+                    <label for="placeFrom">From</label>
+                    <span class="error-message" id="placeFromError"></span>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="arrow-down-circle-outline"></ion-icon>
                     </span>
-                    <input type="text" id="to" placeholder=" " required>
-                    <label for="to">To</label>
-                    <!--                <span class="error-message" id="passwordError"></span>-->
+                    <input type="text" id="placeTo" placeholder=" " required>
+                    <label for="placeTo">To</label>
+                    <span class="error-message" id="placeToError"></span>
                 </div>
                 <div class="input-box">
-                    <!--                    <label for="start">Date</label>-->
-                    <span class="icon">
-                        <ion-icon name="calendar-outline"></ion-icon>
-                    </span>
-                    <input type="date" id="start" name="start" placeholder=" " required>
-                    <!--                <span class="error-message" id="passwordError"></span>-->
+                    <input type="date" id="departureTime" name="departureTime" placeholder=" " required>
+                    <span class="error-message" id="departureTimeError"></span>
                 </div>
 
             </div>
@@ -85,21 +84,21 @@
                     <div class="passenger-details" id="passenger-details">
                         <div>
                             <label>Adults</label>
-                            <button onclick="updateCount('adults', -1)">-</button>
+                            <button type="button" onclick="updateCount('adults', -1)">-</button>
                             <span id="adults-count">1</span>
-                            <button onclick="updateCount('adults', 1)">+</button>
+                            <button type="button" class="for-passengers" onclick="updateCount('adults', 1)">+</button>
                         </div>
                         <div>
                             <label>Children</label>
-                            <button onclick="updateCount('children', -1)">-</button>
+                            <button type="button" onclick="updateCount('children', -1)">-</button>
                             <span id="children-count">0</span>
-                            <button onclick="updateCount('children', 1)">+</button>
+                            <button type="button" class="for-passengers" onclick="updateCount('children', 1)">+</button>
                         </div>
                         <div>
                             <label>Infants (0-2)</label>
-                            <button onclick="updateCount('infants', -1)">-</button>
+                            <button type="button" onclick="updateCount('infants', -1)">-</button>
                             <span id="infants-count">0</span>
-                            <button onclick="updateCount('infants', 1)">+</button>
+                            <button type="button" class="for-passengers" onclick="updateCount('infants', 1)">+</button>
                         </div>
                     </div>
                 </div>
@@ -107,8 +106,30 @@
             </div>
         </form>
     </div>
+
+    <div id="table-of-results" style="display: none;">
+        <h2 style="text-align: center; padding: 2%">Flight Result</h2>
+        <table id="flight-table">
+            <thead>
+            <tr>
+                <th>Place From</th>
+                <th>Place To</th>
+                <th>Departure Time</th>
+                <th>Arrival Time</th>
+                <th>Duration</th>
+                <th>Number of Passengers</th>
+                <th>Number of Available Seats</th>
+                <th>Book</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
 </section>
 
+<div id="footer-placeholder"></div>
 
 </body>
 </html>

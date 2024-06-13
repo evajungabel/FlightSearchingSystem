@@ -13,3 +13,6 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
     show-sql: on
+server:
+  tomcat:
+    relaxed-query-chars: '|,{,},[,],^'

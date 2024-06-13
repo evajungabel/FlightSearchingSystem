@@ -2,9 +2,124 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/searching-table.css">
+    <link rel="stylesheet" href="./css/book-flight.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/mejer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/search-flights.js"></script>
+    <script src="./js/footer.js"></script>
+    <title>Book Flight</title>
 </head>
 <body>
+
+<div id="navbar-placeholder"></div>
+
+<div class="container">
+    <h1 style="font-size: 70px; margin-bottom: 25px">Flights</h1>
+
+    <div class="searching-table">
+        <form action="" id="search-form">
+            <div class="search-inputs fly-types">
+                <div class="input-fly-types">
+                    <input type="radio" id="return" name="ways" value="return">
+                    <label for="return">Return</label>
+                </div>
+                <div class="input-fly-types">
+                    <input type="radio" id="one-way" name="ways" value="one-way">
+                    <label for="one-way">One-way</label>
+                </div>
+                <div class="input-fly-types">
+                    <input type="radio" id="multi-city" name="ways" value="multi-city">
+                    <label for="multi-city">Multi-city</label>
+                </div>
+            </div>
+            <div class="search-inputs middle">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="arrow-up-circle-outline"></ion-icon>
+                    </span>
+                    <input type="text" id="placeFrom" placeholder=" " required>
+                    <label for="placeFrom">From</label>
+                    <span class="error-message" id="placeFromError"></span>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="arrow-down-circle-outline"></ion-icon>
+                    </span>
+                    <input type="text" id="placeTo" placeholder=" " required>
+                    <label for="placeTo">To</label>
+                    <span class="error-message" id="placeToError"></span>
+                </div>
+                <div class="input-box">
+                    <input type="date" id="departureTime" name="departureTime" placeholder=" " required>
+                    <span class="error-message" id="departureTimeError"></span>
+                </div>
+
+            </div>
+            <div class="search-inputs passenger-and-submit">
+                <div class="passenger-selector" onclick="event.stopPropagation()">
+                    <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="people-circle-outline"></ion-icon>
+                    </span>
+                        <input type="text" id="passenger-count" value="Number of passengers: 1" readonly
+                               onclick="toggleDetails(event)">
+
+                    </div>
+                    <div class="passenger-details" id="passenger-details">
+                        <div>
+                            <label>Adults</label>
+                            <button type="button" onclick="updateCount('adults', -1)">-</button>
+                            <span id="adults-count">1</span>
+                            <button type="button" class="for-passengers" onclick="updateCount('adults', 1)">+</button>
+                        </div>
+                        <div>
+                            <label>Children</label>
+                            <button type="button" onclick="updateCount('children', -1)">-</button>
+                            <span id="children-count">0</span>
+                            <button type="button" class="for-passengers" onclick="updateCount('children', 1)">+</button>
+                        </div>
+                        <div>
+                            <label>Infants (0-2)</label>
+                            <button type="button" onclick="updateCount('infants', -1)">-</button>
+                            <span id="infants-count">0</span>
+                            <button type="button" class="for-passengers" onclick="updateCount('infants', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="search" type="submit">Search flights</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="table-of-results" style="display: none;">
+        <h2 style="text-align: center; padding: 2%">Flight Result</h2>
+        <table id="flight-table">
+            <thead>
+            <tr>
+                <th>Place From</th>
+                <th>Place To</th>
+                <th>Departure Time</th>
+                <th>Arrival Time</th>
+                <th>Duration</th>
+                <th>Number of Passengers</th>
+                <th>Number of Available Seats</th>
+                <th>Book</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="footer-placeholder"></div>
 
 </body>
 </html>
