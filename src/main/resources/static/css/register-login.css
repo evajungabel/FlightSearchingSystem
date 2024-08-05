@@ -34,7 +34,6 @@ section {
 .login-box {
     position: relative;
     width: 400px;
-    height: 450px;
     background: white;
     border: 2px solid black;
     border-radius: 20px;
@@ -48,7 +47,6 @@ section {
 .register-box {
     position: relative;
     width: 440px;
-    height: 1450px;
     background: white;
     border: 2px solid black;
     border-radius: 20px;
